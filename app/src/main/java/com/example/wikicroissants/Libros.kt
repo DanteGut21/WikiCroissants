@@ -8,22 +8,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class Estanteria : Fragment() {
-
+class Libros : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedState: Bundle?
     ): View?{
-        return inflater.inflate(R.layout.fragment_estanteria, container, false)
+        return inflater.inflate(R.layout.fragment_libros, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myDataSet = listOf("Libro 1", "Libro 2", "Libro 3")
+        val myDataSet = listOf("Capitulo 1", "Capitulo 2", "Capitulo 3")
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvEstante)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvLibros)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = AdaptadorEstantes(myDataSet)
+        recyclerView.adapter = AdaptadorLibros(myDataSet)
     }
-}//Class Estanteria
+}//Class Libros
