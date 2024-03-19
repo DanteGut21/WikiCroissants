@@ -7,6 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+interface OnItemClickedListener {
+    fun onItemClicked(position: Int)
+}
+
 class AdaptadorEstantes (private val dataList: List<String>) :
     RecyclerView.Adapter<AdaptadorEstantes.ElementoViewHolder>(){//Class Adaptadror
     // Crea nuevas vistas
@@ -28,6 +32,34 @@ class AdaptadorEstantes (private val dataList: List<String>) :
         val textView: TextView = view.findViewById(R.id.tvDescrip)
         val imageView: ImageView = view.findViewById(R.id.imgIcono)
     }
+//
+//class AdaptadorEstantes(private val dataList: List<String>, private val listener: OnItemClickedListener) :
+//    RecyclerView.Adapter<AdaptadorEstantes.ElementoViewHolder>() {
+//
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolder {
+//        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+//        return ElementoViewHolder(adapterLayout, listener)
+//    }
+//
+//    override fun onBindViewHolder(holder: ElementoViewHolder, position: Int) {
+//        val item = dataList[position]
+//        holder.textView.text = item
+//        holder.imageView.setImageResource(R.drawable.libro)
+//    }
+//
+//    override fun getItemCount() = dataList.size
+//
+//    class ElementoViewHolder(view: View, listener: OnItemClickedListener) : RecyclerView.ViewHolder(view) {
+//        val textView: TextView = view.findViewById(R.id.tvDescrip)
+//        val imageView: ImageView = view.findViewById(R.id.imgIcono)
+//
+//        init {
+//            view.setOnClickListener {
+//                listener.onItemClicked(adapterPosition)
+//            }
+//        }
+//    }
+
 }//Class AdaptadroEstante
 
 class AdaptadorLibros (private val dataLibros: List<String>) :
