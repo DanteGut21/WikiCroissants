@@ -25,5 +25,6 @@ class Estanteria : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvEstante)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = AdaptadorEstantes(myDataset)
+
     }
 }//Class Estanteria

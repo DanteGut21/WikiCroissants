@@ -16,7 +16,7 @@ class AdaptadorEstantes (private val dataList: List<String>) :
     // Crea nuevas vistas
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolder {
         // Crea una nueva vista usando el layout definido anteriormente
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_estanteria, parent, false)
         return ElementoViewHolder(adapterLayout)
     }
     // Reemplaza el contenido de una vista
@@ -29,9 +29,10 @@ class AdaptadorEstantes (private val dataList: List<String>) :
     // Devuelve el tamaño de tu conjunto de datos
     override fun getItemCount() = dataList.size
     class ElementoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.tvDescrip)
-        val imageView: ImageView = view.findViewById(R.id.imgIcono)
+        val textView: TextView = view.findViewById(R.id.tvDesEstante)
+        val imageView: ImageView = view.findViewById(R.id.imgEstante)
     }
+
 //
 //class AdaptadorEstantes(private val dataList: List<String>, private val listener: OnItemClickedListener) :
 //    RecyclerView.Adapter<AdaptadorEstantes.ElementoViewHolder>() {
@@ -68,7 +69,7 @@ RecyclerView.Adapter<AdaptadorLibros.ElementoViewHolderLibros>(){
     // Crea nuevas vistas
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolderLibros {
         // Crea una nueva vista usando el layout definido anteriormente
-        val adapterLayoutLibros = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+        val adapterLayoutLibros = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_libros, parent, false)
         return ElementoViewHolderLibros(adapterLayoutLibros)
     }
     // Reemplaza el contenido de una vista
@@ -82,8 +83,8 @@ RecyclerView.Adapter<AdaptadorLibros.ElementoViewHolderLibros>(){
     override fun getItemCount() = dataLibros.size
 
     class ElementoViewHolderLibros(view: View) : RecyclerView.ViewHolder(view){
-        val textView: TextView = view.findViewById(R.id.tvDescrip)
-        val imageView: ImageView = view.findViewById(R.id.imgIcono)
+        val textView: TextView = view.findViewById(R.id.tvDesLibros)
+        val imageView: ImageView = view.findViewById(R.id.imgLibro)
     }
 
 
