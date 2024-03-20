@@ -13,6 +13,9 @@
         android:theme="@style/Theme.WikiCroissants"
         tools:targetApi="31">
         <activity
+            android:name=".Pagina"
+            android:exported="false" />
+        <activity
             android:name=".Principal"
             android:exported="false" />
         <activity

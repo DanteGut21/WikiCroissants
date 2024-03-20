@@ -20,7 +20,11 @@ class Estanteria : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myDataset = listOf("Libro 1", "Libro 2", "Libro 3")
+        val myDataset = mutableListOf<String>().apply {
+            for (i in 1..20) {
+                add("Libros $i")
+            }
+        }
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvEstante)
         recyclerView.layoutManager = LinearLayoutManager(context)

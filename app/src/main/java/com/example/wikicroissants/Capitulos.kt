@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class Libros : Fragment() {
+class Capitulos : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedState: Bundle?
-    ): View?{
-        return inflater.inflate(R.layout.fragment_libros, container, false)
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_capitulos, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,12 +23,14 @@ class Libros : Fragment() {
 
         val myDataset = mutableListOf<String>().apply {
             for (i in 1..20) {
-                add("Libro $i")
+                add("Capítulo $i")
             }
         }
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvLibros)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rvCapitulo)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = AdaptadorLibros(myDataset)
+        recyclerView.adapter = AdaptadorCapitulos(myDataset)
+
     }
-}//Class Libros
+
+}//Class capitulos

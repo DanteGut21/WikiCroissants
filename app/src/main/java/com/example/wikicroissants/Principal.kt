@@ -14,6 +14,7 @@ class Principal : AppCompatActivity(){
             setReorderingAllowed(true)
 //            add<Estanteria>(R.id.fragmentContainer)
             add<Libros>(R.id.fragmentContainer)
+//            add<Capitulos>(R.id.fragmentContainer)
         }
     }
 }

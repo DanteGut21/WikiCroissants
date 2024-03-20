@@ -33,34 +33,6 @@ class AdaptadorEstantes (private val dataList: List<String>) :
         val imageView: ImageView = view.findViewById(R.id.imgEstante)
     }
 
-//
-//class AdaptadorEstantes(private val dataList: List<String>, private val listener: OnItemClickedListener) :
-//    RecyclerView.Adapter<AdaptadorEstantes.ElementoViewHolder>() {
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolder {
-//        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-//        return ElementoViewHolder(adapterLayout, listener)
-//    }
-//
-//    override fun onBindViewHolder(holder: ElementoViewHolder, position: Int) {
-//        val item = dataList[position]
-//        holder.textView.text = item
-//        holder.imageView.setImageResource(R.drawable.libro)
-//    }
-//
-//    override fun getItemCount() = dataList.size
-//
-//    class ElementoViewHolder(view: View, listener: OnItemClickedListener) : RecyclerView.ViewHolder(view) {
-//        val textView: TextView = view.findViewById(R.id.tvDescrip)
-//        val imageView: ImageView = view.findViewById(R.id.imgIcono)
-//
-//        init {
-//            view.setOnClickListener {
-//                listener.onItemClicked(adapterPosition)
-//            }
-//        }
-//    }
-
 }//Class AdaptadroEstante
 
 class AdaptadorLibros (private val dataLibros: List<String>) :
@@ -90,29 +62,25 @@ RecyclerView.Adapter<AdaptadorLibros.ElementoViewHolderLibros>(){
 
 }//Class AdaptadorLibros
 
-//class AdaptadorPaginas (private val dataList: List<String>) :
-//    RecyclerView.Adapter<Adaptador.ElementoViewHolderPaginas>(){
-//
-//    // Proporciona una referencia a las vistas para cada elemento de datos
-//    class ElementoViewHolderLibros(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val textView: TextView = itemView.findViewById(R.id.tvLibros)
-//    }
-//
-//    // Crea nuevas vistas (invocadas por el layout manager)
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolderLibros {
-//        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-//        return ElementoViewHolderLibros(itemView)
-//    }
-//
-//    // Reemplaza el contenido de una vista (invocada por el layout manager)
-//    override fun onBindViewHolder(holder: ElementoViewHolderLibros, position: Int) {
-//        val currentItem = dataList[position]
-//        holder.textView.text = currentItem
-//    }
-//
-//    // Retorna el tamaño de tu dataset (invocado por el layout manager)
-//    override fun getItemCount() = dataList.size
-//
-//    // Define una clase para el ViewHolder
-//
-//}//Class Paginas
+class AdaptadorCapitulos (private val dataCapitulos: List<String>) :
+    RecyclerView.Adapter<AdaptadorCapitulos.ElementoViewHolderCapitulos>(){
+
+    // Crea nuevas vistas (invocadas por el layout manager)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolderCapitulos {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_capitulos, parent, false)
+        return ElementoViewHolderCapitulos(itemView)
+    }
+
+    // Reemplaza el contenido de una vista (invocada por el layout manager)
+    override fun onBindViewHolder(holder: ElementoViewHolderCapitulos, position: Int) {
+        val currentItem = dataCapitulos[position]
+        holder.textView.text = currentItem
+    }
+
+    // Retorna el tamaño de tu dataset (invocado por el layout manager)
+    override fun getItemCount() = dataCapitulos.size
+    // Proporciona una referencia a las vistas para cada elemento de datos
+    class ElementoViewHolderCapitulos(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val textView: TextView = itemView.findViewById(R.id.tvCaptiulos)
+    }
+}//Class Paginas
