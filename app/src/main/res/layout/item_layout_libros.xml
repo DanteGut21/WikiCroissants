@@ -5,26 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgLibro"
+    <LinearLayout
+        android:id="@+id/llLibroIzq"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5"
-        app:srcCompat="@drawable/libro" />
+        app:layout_constraintWidth_percent="0.50"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvDesLibros"
+        <ImageView
+            android:id="@+id/imgLibroIzq"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/libro" />
+
+        <TextView
+            android:id="@+id/tvTituloLibroIzq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Titulo"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="@id/imgLibroIzq" />
+
+        <TextView
+            android:id="@+id/tvDesLibroIzq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:text="Descripción"
+            app:layout_constraintTop_toTopOf="@id/tvTituloLibroIzq" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLibroDer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border1"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLibro"
-        app:layout_constraintWidth_percent="0.5" />
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llLibroIzq"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.50">
 
+        <ImageView
+            android:id="@+id/imgLibroDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/libro" />
+
+        <TextView
+            android:id="@+id/tvTituloLibroDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Titulo"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="@id/imgLibroDer" />
+
+        <TextView
+            android:id="@+id/tvDesclibroDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Descripción"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/tvTituloLibroDer" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

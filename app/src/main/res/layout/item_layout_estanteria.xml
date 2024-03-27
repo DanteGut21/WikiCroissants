@@ -6,32 +6,82 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/llEstanteIzq"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:clickable="true">
+        app:layout_constraintWidth_percent="0.50"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imgEstante"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/libro" />
+        <ImageView
+            android:id="@+id/imgEstanteIzq"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/libro" />
 
-    <TextView
-        android:id="@+id/tvDesEstante"
-        android:layout_width="299dp"
-        android:layout_height="110dp"
-        android:padding="16dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvTituloEstanteIzq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Titulo"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="@id/imgEstanteIzq" />
+
+        <TextView
+            android:id="@+id/tvDescEstanteIzq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:text="Descripción"
+            app:layout_constraintTop_toTopOf="@id/tvTituloEstanteIzq" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/llEstanteDer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llEstanteIzq"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.50">
+
+        <ImageView
+            android:id="@+id/imgEstanteDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/libro" />
+
+        <TextView
+            android:id="@+id/tvTituloEstanteDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Titulo"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="@id/imgEstanteDer" />
+
+        <TextView
+            android:id="@+id/tvDesEstanteDer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="Descripción"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/tvTituloEstanteDer" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

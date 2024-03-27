@@ -29,8 +29,8 @@ class AdaptadorEstantes (private val dataList: List<String>) :
     // Devuelve el tamaño de tu conjunto de datos
     override fun getItemCount() = dataList.size
     class ElementoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.tvDesEstante)
-        val imageView: ImageView = view.findViewById(R.id.imgEstante)
+        val textView: TextView = view.findViewById(R.id.tvTituloEstanteIzq)
+        val imageView: ImageView = view.findViewById(R.id.imgEstanteIzq)
     }
 
 }//Class AdaptadroEstante
@@ -55,8 +55,11 @@ RecyclerView.Adapter<AdaptadorLibros.ElementoViewHolderLibros>(){
     override fun getItemCount() = dataLibros.size
 
     class ElementoViewHolderLibros(view: View) : RecyclerView.ViewHolder(view){
-        val textView: TextView = view.findViewById(R.id.tvDesLibros)
-        val imageView: ImageView = view.findViewById(R.id.imgLibro)
+//        val textView: TextView = view.findViewById(R.id.tvDesLibrosL)
+//        val imageView: ImageView = view.findViewById(R.id.imgLibroL)
+
+        val textView: TextView = view.findViewById(R.id.tvTituloLibroIzq)
+        val imageView: ImageView = view.findViewById(R.id.imgLibroIzq)
     }
 
 
@@ -83,4 +86,21 @@ class AdaptadorCapitulos (private val dataCapitulos: List<String>) :
     class ElementoViewHolderCapitulos(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tvCaptiulos)
     }
-}//Class Paginas
+}//Class Capitulos
+
+// class AdaptadorPaginas (private val dataPaginas: List<String>) :
+//    RecyclerView.Adapter<AdaptadorPaginas.ElementoViewHolderPaginas>(){
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ElementoViewHolderPaginas {
+//        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_capitulos, parent, false)
+//        return ElementoViewHolderPaginas(itemView)
+//    }
+//    override fun onBindViewHolder(holder: ElementoViewHolderPaginas, position: Int) {
+//        val currentItem = dataPaginas[position]
+//        holder.textView.text = currentItem
+//    }
+//    override fun getItemCount() = dataPaginas.size
+//    class ElementoViewHolderPaginas(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//        val textView: TextView = itemView.findViewById(R.id.tvPagina)
+//    }
+//}//Class Capitulos
+//

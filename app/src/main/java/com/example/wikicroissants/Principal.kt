@@ -12,9 +12,9 @@ class Principal : AppCompatActivity(){
 
         supportFragmentManager.commit{
             setReorderingAllowed(true)
-//            add<Estanteria>(R.id.fragmentContainer)
-            add<Libros>(R.id.fragmentContainer)
+            add<Estanteria>(R.id.fragmentContainer)
+//            add<Libros>(R.id.fragmentContainer)
 //            add<Capitulos>(R.id.fragmentContainer)
         }
-    }
-}
+    }//OnCreate
+}//Class Principal

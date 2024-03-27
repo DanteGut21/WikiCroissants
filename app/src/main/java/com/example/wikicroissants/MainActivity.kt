@@ -29,19 +29,15 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener(View.OnClickListener {
 
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
-            // Muestra un mensaje de login exitoso
             Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
 
-            // Crea un Intent para iniciar la activity
             val intent = Intent(this, Principal::class.java)
+//            val intent = Intent(this, Pagina::class.java)
 
-            // Inicia la actividad
             startActivity(intent)
 
-            // Opcional: Finaliza la actividad actual si no quieres que el usuario regrese a ella presionando el botón atrás
             finish()
             } else {
-            // Muestra un mensaje de fallo en el login
             Toast.makeText(this, "Login Failed!", Toast.LENGTH_SHORT).show()
             }
         })//setOnClickListener
