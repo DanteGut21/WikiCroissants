@@ -9,11 +9,9 @@ class Pagina : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagina)
-
         supportFragmentManager.commit{
             setReorderingAllowed(true)
             add<Paginas>(R.id.fcPagina)
         }
-
     }//onCreate
 }//Class pagina

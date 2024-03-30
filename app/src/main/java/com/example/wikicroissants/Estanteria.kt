@@ -25,7 +25,12 @@ class Estanteria : Fragment(){
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvEstante)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = AdaptadorEstantes(myDataset) {item ->
-            Toast.makeText(context,"clic en $item", Toast.LENGTH_SHORT).show()
+            val fragmentoLibros = Libros()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragmentoLibros)
+                .addToBackStack(null)
+                .commit()
+            Toast.makeText(context,"Ingresando a $item", Toast.LENGTH_SHORT).show()
         }
     }
 }//Class Estanteria
