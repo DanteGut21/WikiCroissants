@@ -1,13 +1,16 @@
 package com.example.wikicroissants
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 class Capitulos : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +28,7 @@ class Capitulos : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvCapitulo)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = AdaptadorCapitulos(myDataset) {item ->
+
             Toast.makeText(context, "Ingresando al $item", Toast.LENGTH_SHORT).show()
         }
     }

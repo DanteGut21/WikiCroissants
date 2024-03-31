@@ -9,9 +9,7 @@ class Pagina : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pagina)
-        supportFragmentManager.commit{
-            setReorderingAllowed(true)
-            add<Paginas>(R.id.fcPagina)
-        }
+        val capituloSeleccionado = intent.getStringExtra("EXTRA_CAPITULO")
+        // Usa `capituloSeleccionado` según sea necesario
     }//onCreate
 }//Class pagina

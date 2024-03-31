@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Libros">
 
+
+    <TextView
+        android:id="@+id/tvTituloEstante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titulo estante"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvLibros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLibros"
         android:layout_width="0dp"
@@ -13,6 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloEstante" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -125,7 +125,7 @@ class AdaptadorCapitulos (private val dataCapitulos: List<String>, private val o
     override fun getItemCount() = dataCapitulos.size
     // Proporciona una referencia a las vistas para cada elemento de datos
     class ElementoViewHolderCapitulos(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView: TextView = itemView.findViewById(R.id.tvCaptiulos)
+        val textView: TextView = itemView.findViewById(R.id.tvCapitulo)
     }
 }//Class Capitulos
 
