@@ -29,6 +29,12 @@ class Capitulos : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = AdaptadorCapitulos(myDataset) {item ->
 
+            val intent = Intent(context, Pagina::class.java).apply {
+                // Opcional: Pasa información adicional a PaginaActivity
+                putExtra("EXTRA_CAPITULO", item)
+            }
+            startActivity(intent)
+
             Toast.makeText(context, "Ingresando al $item", Toast.LENGTH_SHORT).show()
         }
     }
