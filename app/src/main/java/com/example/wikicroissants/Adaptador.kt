@@ -3,8 +3,11 @@ package com.example.wikicroissants
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -113,12 +116,13 @@ class AdaptadorCapitulos (private val dataCapitulos: List<String>, private val o
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout_capitulos, parent, false)
         return ElementoViewHolderCapitulos(itemView)
     }
-    // Reemplaza el contenido de una vista (invocada por el layout manager)
+//     Reemplaza el contenido de una vista (invocada por el layout manager)
     override fun onBindViewHolder(holder: ElementoViewHolderCapitulos, position: Int) {
         val currentItem = dataCapitulos[position]
         holder.textView.text = currentItem
         holder.itemView.findViewById<LinearLayout>(R.id.llConten1).setOnClickListener {
             onClick(currentItem)
+
         }
     }
     // Retorna el tamaño de tu dataset (invocado por el layout manager)
@@ -126,6 +130,7 @@ class AdaptadorCapitulos (private val dataCapitulos: List<String>, private val o
     // Proporciona una referencia a las vistas para cada elemento de datos
     class ElementoViewHolderCapitulos(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tvCapitulo)
+//        val spinner: Spinner = itemView.findViewById(R.id.spnPaginas)
     }
 }//Class Capitulos
 

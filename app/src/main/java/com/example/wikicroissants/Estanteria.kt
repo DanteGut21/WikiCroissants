@@ -19,7 +19,7 @@ class Estanteria : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         val myDataset = mutableListOf<String>().apply {
             for (i in 1..5) {
-                add("Libros $i")
+                add("Departamento $i")
             }
         }
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvEstante)
