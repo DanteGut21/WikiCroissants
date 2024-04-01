@@ -31,7 +31,7 @@ class Libros : Fragment() {
                 .replace(R.id.fragmentContainer, fragmentoCapitulos)
                 .addToBackStack(null)
                 .commit()
-            Toast.makeText(context,"Ingresando a $item", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context,"Ingresando a $item", Toast.LENGTH_SHORT).show()
         }
     }
 }//Class Libros

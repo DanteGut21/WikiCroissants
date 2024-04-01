@@ -1,14 +1,14 @@
 package com.example.wikicroissants
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 class Paginas : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -17,25 +17,8 @@ class Paginas : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_paginas, container, false)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myDataset = mutableListOf<String>().apply {
-            for (i in 1..20) {
-                add("Pagina $i" +
-                        "gggggggggggggggggggggggggggggggggggggggggggggggggggg" +
-                        "ggggggggggggggggggggggggggggggggggggggggggggggggggg" +
-                        "gggggggggggggggggggggggggggggggggggggggggggggggggg" +
-                        "ggggggggggggggggggggggggggggggggggggggggggggggggg" +
-                        "gggggggggggggggggggggggggggggggggggggggggggggggg" +
-                        "ggggggggggggggggggggggggggggggggggggggggggggggg")
-            }
-        }
-
-        val textView = view.findViewById<TextView>(R.id.tvPagina)
-//        recyclerView.layoutManager = LinearLayoutManager(context)
-//        recyclerView.adapter = AdaptadorPaginas(myDataset)
-
-    }
+    }//onViewCreated
 }//Class Paginas

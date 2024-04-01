@@ -33,5 +33,5 @@ class MainActivity : AppCompatActivity() {
         binding.registerButton.setOnClickListener {
             startActivity(Intent(this, RegistroActivity::class.java) )
         }
-    }
+    }//onCreate
 }//Class Main

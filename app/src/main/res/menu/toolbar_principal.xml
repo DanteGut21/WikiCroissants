@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/itemEstante"
-        android:title="@string/action_settings"
+        android:title="@string/library"
         android:icon="@drawable/local_library_24"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itemLibros"
-        android:title="@string/action_settings"
+        android:title="@string/books"
         android:icon="@drawable/library_books_24"
         app:showAsAction="ifRoom" />
     <item

@@ -30,7 +30,7 @@ class Estanteria : Fragment(){
                 .replace(R.id.fragmentContainer, fragmentoLibros)
                 .addToBackStack(null)
                 .commit()
-            Toast.makeText(context,"Ingresando a $item", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context,"Ingresando a $item", Toast.LENGTH_SHORT).show()
         }
     }
 }//Class Estanteria

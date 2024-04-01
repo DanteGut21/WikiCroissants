@@ -35,7 +35,7 @@ class Capitulos : Fragment() {
             }
             startActivity(intent)
 
-            Toast.makeText(context, "Ingresando al $item", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "Ingresando al $item", Toast.LENGTH_SHORT).show()
         }
     }
 }//Class capitulos
