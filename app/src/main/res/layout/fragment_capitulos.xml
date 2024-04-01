@@ -5,29 +5,27 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Capitulos">
-
     <TextView
         android:id="@+id/tvTituloLibro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Titulo libro"
-        android:textSize="24dp"
+        android:textSize="48dp"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/llDescripcionCapitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloLibro">
-
-
         <TextView
             android:id="@+id/tvUltMod"
             android:layout_width="wrap_content"
@@ -38,7 +36,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/tvAutor"
             android:layout_width="wrap_content"
@@ -49,18 +46,16 @@
             app:layout_constraintStart_toStartOf="@+id/tvUltMod"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-
     <TextView
         android:id="@+id/tvDesContenido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:text="Descrición del contenido del libro"
         app:layout_constraintTop_toBottomOf="@+id/llDescripcionCapitulo">
-
     </TextView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCapitulo"
         android:layout_width="0dp"
@@ -70,5 +65,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDesContenido" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

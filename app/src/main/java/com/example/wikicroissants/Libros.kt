@@ -20,7 +20,7 @@ class Libros : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val myDataset = mutableListOf<String>().apply {
             for (i in 1..5) {
-                add("Libro y capitulo $i")
+                add("Libro $i")
             }
         }
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvLibros)

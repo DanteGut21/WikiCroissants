@@ -21,8 +21,7 @@ class Principal : AppCompatActivity(){
         //Toolbar
         supportFragmentManager.commit{
             setReorderingAllowed(true)
-            add<Estanteria>(R.id.fragmentContainer)
-//                .addToBackStack(null)
+            add<Inicio>(R.id.fragmentContainer)
         }
     }//OnCreate
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -33,17 +32,11 @@ class Principal : AppCompatActivity(){
         return when (item.itemId) {
             R.id.itemEstante -> {
                 Toast.makeText(this,"Estantes", Toast.LENGTH_SHORT).show()
-                // Crea una instancia del nuevo fragmento que deseas mostrar
                 val fragemntoEsatntes = Estanteria()
-                // Obtén el FragmentManager
                 val fragmentManager = supportFragmentManager
-                // Comienza una transacción de fragmento
                 val transaction = fragmentManager.beginTransaction()
-                // Reemplaza el fragmento actual por el nuevo fragmento
                 transaction.replace(R.id.fragmentContainer, fragemntoEsatntes)
-                // Agrega la transacción a la pila de retroceso (opcional)
                 transaction.addToBackStack(null)
-                // Realiza la transacción
                 transaction.commit()
                 true
             }

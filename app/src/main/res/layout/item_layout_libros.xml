@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <LinearLayout
         android:id="@+id/llLibroIzq"
         android:layout_width="0dp"
@@ -17,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.50"
         android:orientation="vertical">
-
         <ImageView
             android:id="@+id/imgLibroIzq"
             android:layout_width="wrap_content"
@@ -25,7 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/libro" />
-
         <TextView
             android:id="@+id/tvTituloLibroIzq"
             android:layout_width="match_parent"
@@ -34,7 +31,6 @@
             android:text="Titulo"
             android:textSize="26sp"
             app:layout_constraintTop_toTopOf="@id/imgLibroIzq" />
-
         <TextView
             android:id="@+id/tvDesLibroIzq"
             android:layout_width="match_parent"
