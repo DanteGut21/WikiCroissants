@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,11 +19,11 @@
         <activity
             android:name=".DrawerLayoult"
             android:exported="false" />
-        <activity
-            android:name=".Principio"
-            android:exported="false"
-            android:label="@string/title_activity_principio"
-            android:theme="@style/Theme.WikiCroissants.NoActionBar" />
+<!--        <activity-->
+<!--            android:name=".Principio"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_principio"-->
+<!--            android:theme="@style/Theme.WikiCroissants.NoActionBar" />-->
         <activity
             android:name=".Pagina"
             android:exported="false" />
