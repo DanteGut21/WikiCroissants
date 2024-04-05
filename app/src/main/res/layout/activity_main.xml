@@ -55,15 +55,15 @@
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No tienes cuenta?"
-                android:id="@+id/registerButton"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="end"
-                android:textColor="@color/lightBlue"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="No tienes cuenta?"-->
+<!--                android:id="@+id/registerButton"-->
+<!--                android:textSize="12sp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:textColor="@color/lightBlue"/>-->
 
             <Button
                 android:id="@+id/loginButton"
@@ -71,6 +71,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/botonborde1"
+                android:textColorLink="@color/lightBlue"
                 android:text="INICIO"
                 android:textSize="18sp"
                 app:cornerRadius="12dp"
@@ -82,6 +83,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Scan QR/Barcode"
                 android:background="@drawable/custom_edittext"
+                android:textColorLink="@color/white"
                 android:textColor="@color/lightBlue"/>
         </LinearLayout>
 

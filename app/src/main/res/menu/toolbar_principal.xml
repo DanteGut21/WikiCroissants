@@ -12,8 +12,8 @@
         android:icon="@drawable/library_books_24"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/itemAjustes"
-        android:title="@string/action_settings"
+        android:id="@+id/itemSalir"
+        android:title="@string/salida"
         app:showAsAction="never" />
 
 </menu>

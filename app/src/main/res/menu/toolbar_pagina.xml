@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemDelete"
+        android:icon="@drawable/delete_24"
+        android:title="@string/delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemModify"
+        android:icon="@drawable/edit_document_24"
+        android:title="@string/modify"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemAdd"
+        android:icon="@drawable/add_24"
+        android:title="@string/add"
+        app:showAsAction="ifRoom" />
+</menu>

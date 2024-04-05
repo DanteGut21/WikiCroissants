@@ -1,4 +1,5 @@
 package com.example.wikicroissants
+import android.content.Intent
 import android.media.tv.TvContract.Channels.Logo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -50,7 +51,14 @@ class Principal : AppCompatActivity(){
                 transaction.commit()
                 true
             }
+            R.id.itemSalir -> {
+                Toast.makeText(this,"Sesión cerrada correctamente", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }//onOptionsItemSelected
 }//Class Principal

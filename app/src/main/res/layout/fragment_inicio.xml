@@ -22,7 +22,7 @@
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBienvenido" />
-    <ImageButton
+    <Button
         android:id="@+id/imgbEstante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,21 +30,22 @@
         android:background="@drawable/custom_edittext"
         android:src="@drawable/croissants"
         android:padding="20dp"
+        android:text="Estanteria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOpcion" />
-        <ImageButton
-        android:id="@+id/imgbEdicion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/custom_edittext"
-        android:src="@drawable/croissants"
-        android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbEstante" />
-    <ImageButton
+<!--        <Button-->
+<!--        android:id="@+id/imgbEdicion"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="72dp"-->
+<!--        android:background="@drawable/custom_edittext"-->
+<!--        android:src="@drawable/croissants"-->
+<!--        android:padding="20dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imgbEstante" />-->
+    <Button
         android:id="@+id/imgbUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +53,8 @@
         android:background="@drawable/custom_edittext"
         android:src="@drawable/croissants"
         android:padding="20dp"
+        android:text="Usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbEdicion" />
+        app:layout_constraintTop_toBottomOf="@+id/imgbEstante" />
 </androidx.constraintlayout.widget.ConstraintLayout>

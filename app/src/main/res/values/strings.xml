@@ -14,5 +14,9 @@
     <string name="menu_gallery">Gallery</string>
     <string name="library">Estante</string>
     <string name="books">Libros</string>
+    <string name="delete">Eliminar</string>
+    <string name="modify">Modificar</string>
+    <string name="add">Agregar</string>
     <string name="action_settings">Ajustes</string>
+    <string name="salida">Cerra sesión</string>
 </resources>
