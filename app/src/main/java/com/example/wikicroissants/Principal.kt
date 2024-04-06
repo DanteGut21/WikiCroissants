@@ -22,8 +22,8 @@ class Principal : AppCompatActivity(){
         //Toolbar
         supportFragmentManager.commit{
             setReorderingAllowed(true)
-//            add<Inicio>(R.id.fragmentContainer)
-            add<Estanteria>(R.id.fragmentContainer)
+            add<Inicio>(R.id.fragmentContainer)
+//            add<Estanteria>(R.id.fragmentContainer)
         }
     }//OnCreate
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

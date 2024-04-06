@@ -4,12 +4,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 
-lateinit var imgbEstante: ImageButton
-lateinit var imgbEdicion: ImageButton
-lateinit var imgbUsuario: ImageButton
 class Inicio : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,8 +19,8 @@ class Inicio : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val imgbEstante: ImageButton = view.findViewById(R.id.imgbEstante)
-        imgbEstante.setOnClickListener{
+        val BTNEstante: Button = view.findViewById(R.id.imgbEstante)
+        BTNEstante.setOnClickListener{
 //            Toast.makeText(context, "Estanteria", Toast.LENGTH_SHORT).show()
             val fragmentoEstanteria = Estanteria()
             requireActivity().supportFragmentManager.beginTransaction()
@@ -30,17 +28,17 @@ class Inicio : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }//setOnClickListener
-//        val imgbEdicion: ImageButton = view.findViewById(R.id.imgbEdicion)
-        imgbEdicion.setOnClickListener{
-//            Toast.makeText(context, "CRUD", Toast.LENGTH_SHORT).show()
-            val fragmentoCRUD = CRUD()
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, fragmentoCRUD)
-                .addToBackStack(null)
-                .commit()
-        }//setOnClickListener imgbEdicion
-        val imgbUsuario: ImageButton = view.findViewById(R.id.imgbUsuario)
-        imgbUsuario.setOnClickListener{
+////        val imgbEdicion: ImageButton = view.findViewById(R.id.imgbEdicion)
+//        imgbEdicion.setOnClickListener{
+////            Toast.makeText(context, "CRUD", Toast.LENGTH_SHORT).show()
+//            val fragmentoCRUD = CRUD()
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragmentContainer, fragmentoCRUD)
+//                .addToBackStack(null)
+//                .commit()
+//        }//setOnClickListener imgbEdicion
+        val btnUsuario: Button = view.findViewById(R.id.imgbUsuario)
+        btnUsuario.setOnClickListener{
             Toast.makeText(context, "Usuario", Toast.LENGTH_SHORT).show()
         }//setOnClickListenerimgbUsuario
     }//onViewCreated
