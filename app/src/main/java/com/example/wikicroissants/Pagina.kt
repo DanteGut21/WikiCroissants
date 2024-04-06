@@ -12,10 +12,6 @@ import android.widget.Toolbar
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 
-lateinit var btnAnterior: Button
-lateinit var btnSiguiente: Button
-lateinit var tbPagina: Toolbar
-
 class Pagina : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,21 +42,42 @@ class Pagina : AppCompatActivity() {
         menuInflater.inflate(R.menu.toolbar_pagina, menu)
         return true
     }//onCreateOptionsMenu
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.itemDelete -> {
-                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.itemModify -> {
-                Toast.makeText(this,"Modificar Pagina", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.itemAdd -> {
-                Toast.makeText(this,"Agregar Pagina", Toast.LENGTH_SHORT).show()
+            R.id.itemDelete, R.id.itemModify, R.id.itemAdd -> {
+                // Iniciar ContenedorCRUD Activity con la acción correspondiente
+                val intent = Intent(this, ContenedorCRUD::class.java)
+                val action = when (item.itemId) {
+                    R.id.itemDelete -> "DELETE"
+                    R.id.itemModify -> "MODIFY"
+                    else -> "ADD"
+                }
+                intent.putExtra("ACTION", action)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }//onOptionsItemSelected
-}//Class pagina
+    }
+
+
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            R.id.itemDelete -> {
+//                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//            R.id.itemModify -> {
+//                Toast.makeText(this,"Modificar Pagina", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//            R.id.itemAdd -> {
+//                Toast.makeText(this,"Agregar Pagina", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }//onOptionsItemSelected
+    }//Class pagina

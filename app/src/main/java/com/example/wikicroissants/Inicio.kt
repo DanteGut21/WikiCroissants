@@ -28,15 +28,6 @@ class Inicio : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }//setOnClickListener
-////        val imgbEdicion: ImageButton = view.findViewById(R.id.imgbEdicion)
-//        imgbEdicion.setOnClickListener{
-////            Toast.makeText(context, "CRUD", Toast.LENGTH_SHORT).show()
-//            val fragmentoCRUD = CRUD()
-//            requireActivity().supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainer, fragmentoCRUD)
-//                .addToBackStack(null)
-//                .commit()
-//        }//setOnClickListener imgbEdicion
         val btnUsuario: Button = view.findViewById(R.id.imgbUsuario)
         btnUsuario.setOnClickListener{
             Toast.makeText(context, "Usuario", Toast.LENGTH_SHORT).show()

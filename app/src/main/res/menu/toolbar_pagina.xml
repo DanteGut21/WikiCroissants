@@ -5,7 +5,7 @@
         android:id="@+id/itemDelete"
         android:icon="@drawable/delete_24"
         android:title="@string/delete"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/itemModify"
         android:icon="@drawable/edit_document_24"

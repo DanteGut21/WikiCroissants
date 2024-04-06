@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Paginas"
-    android:background="@drawable/lineleft">
+    tools:context=".Paginas">
 
     <TextView
         android:id="@+id/tvPagina"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/lavender"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"

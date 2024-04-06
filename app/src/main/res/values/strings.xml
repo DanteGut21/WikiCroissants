@@ -19,4 +19,7 @@
     <string name="add">Agregar</string>
     <string name="action_settings">Ajustes</string>
     <string name="salida">Cerra sesión</string>
+    <string name="modificar_pagina">Modificar Pagina</string>
+    <string name="eliminar_pagina">Eliminar pagina</string>
+    <string name="agregar_pagina">Agregar pagina</string>
 </resources>
