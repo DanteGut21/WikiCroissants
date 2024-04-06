@@ -30,7 +30,7 @@ class Inicio : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }//setOnClickListener
-        val imgbEdicion: ImageButton = view.findViewById(R.id.imgbEdicion)
+//        val imgbEdicion: ImageButton = view.findViewById(R.id.imgbEdicion)
         imgbEdicion.setOnClickListener{
 //            Toast.makeText(context, "CRUD", Toast.LENGTH_SHORT).show()
             val fragmentoCRUD = CRUD()

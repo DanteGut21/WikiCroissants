@@ -34,17 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOpcion" />
-<!--        <Button-->
-<!--        android:id="@+id/imgbEdicion"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="72dp"-->
-<!--        android:background="@drawable/custom_edittext"-->
-<!--        android:src="@drawable/croissants"-->
-<!--        android:padding="20dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/imgbEstante" />-->
     <Button
         android:id="@+id/imgbUsuario"
         android:layout_width="wrap_content"
