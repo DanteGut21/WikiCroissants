@@ -15,6 +15,7 @@
     <string name="library">Estante</string>
     <string name="books">Libros</string>
     <string name="delete">Eliminar</string>
+    <string name="save">Guardar</string>
     <string name="modify">Modificar</string>
     <string name="add">Agregar</string>
     <string name="action_settings">Ajustes</string>
@@ -22,4 +23,7 @@
     <string name="modificar_pagina">Modificar Pagina</string>
     <string name="eliminar_pagina">Eliminar pagina</string>
     <string name="agregar_pagina">Agregar pagina</string>
+
+    <string name="si">Aceptar</string>
+    <string name="no">Cancelar</string>
 </resources>

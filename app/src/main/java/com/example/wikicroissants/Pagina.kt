@@ -7,8 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 
@@ -22,6 +24,8 @@ class Pagina : AppCompatActivity() {
         setSupportActionBar(tbPagina)
         //Toolbar
 
+//        supportActionBar?.title = ""
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         supportFragmentManager.commit {
             setReorderingAllowed(true)
             add<Paginas>(R.id.fcPagina)
@@ -36,48 +40,47 @@ class Pagina : AppCompatActivity() {
         btnSiguiente.setOnClickListener{
             Toast.makeText(this, "Siguiente", Toast.LENGTH_SHORT).show()
         }
-        supportActionBar?.title = ""
     }//onCreate
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_pagina, menu)
         return true
     }//onCreateOptionsMenu
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.itemDelete, R.id.itemModify, R.id.itemAdd -> {
-                // Iniciar ContenedorCRUD Activity con la acción correspondiente
-                val intent = Intent(this, ContenedorCRUD::class.java)
-                val action = when (item.itemId) {
-                    R.id.itemDelete -> "DELETE"
-                    R.id.itemModify -> "MODIFY"
-                    else -> "ADD"
+            R.id.itemDelete -> {
+                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.itemSave -> {
+                val fragment = supportFragmentManager.findFragmentById(R.id.fcPagina) as Paginas?
+                fragment?.let { frag ->
+                    AlertDialog.Builder(this)
+                        .setTitle("Confirmar Cambios")
+                        .setMessage("¿Deseas guardar los cambios realizados?")
+                        .setPositiveButton("Guardar") { dialog, which ->
+                            frag.saveText()
+                        }
+                        .setNegativeButton("Cancelar", null)
+                        .show()
                 }
-                intent.putExtra("ACTION", action)
+                Toast.makeText(this,"Guardar Pagina", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.itemModify -> {
+                val fragment = supportFragmentManager.findFragmentById(R.id.fcPagina) as Paginas?
+                fragment?.let {
+                    it.unlockEditText()
+                }
+                Toast.makeText(this,"Modificar Pagina", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.itemAdd -> {
+                val intent = Intent(this, ContenedorCRUD::class.java)
                 startActivity(intent)
+                Toast.makeText(this,"Agregar Pagina", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.itemId) {
-//            R.id.itemDelete -> {
-//                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
-//                true
-//            }
-//            R.id.itemModify -> {
-//                Toast.makeText(this,"Modificar Pagina", Toast.LENGTH_SHORT).show()
-//                true
-//            }
-//            R.id.itemAdd -> {
-//                Toast.makeText(this,"Agregar Pagina", Toast.LENGTH_SHORT).show()
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }//onOptionsItemSelected
+        }//when
+    }//onOptionsItemSelected
     }//Class pagina

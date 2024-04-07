@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener(View.OnClickListener {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
             Toast.makeText(this, "Bienvienido Usuario!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, Principal::class.java)
+//            val intent = Intent(this, Principal::class.java)
+            val intent = Intent(this, Pagina::class.java)
             startActivity(intent)
             finish()
             } else {

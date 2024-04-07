@@ -30,7 +30,7 @@
         <EditText
             android:id="@+id/edtAgregar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="Agrega texto a tu nueva pagina"
             />
 
@@ -47,103 +47,6 @@
             app:layout_constraintTop_toBottomOf="@+id/edtAgregar" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llCRUDModificar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/custom_edittext"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llCRUDAgregar">
-
-        <TextView
-            android:id="@+id/tvModificar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:gravity="center"
-            android:text="Modificar paginas"
-            android:textColor="@color/lightBlue"
-            android:textSize="48sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <!--        Spinnner para selecionar pagina a editar-->
-        <Spinner
-            android:id="@+id/spnModificar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <!--        Spinnner para selecionar pagina a editar-->
-        <EditText
-            android:id="@+id/edtModificar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Modifica el texto a tu pagina"
-            />
-
-        <Button
-            android:id="@+id/btnModificar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/lightBlue"
-            android:padding="10dp"
-            android:text="@string/modificar_pagina"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtModificar" />" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llCRUDEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/custom_edittext"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llCRUDModificar">
-        <TextView
-            android:id="@+id/tvEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:text="Eliminar pagina"
-            android:textColor="@color/lightBlue"
-            android:textSize="48sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <!--        Spinnner para eliminar la  pagina-->
-        <Spinner
-            android:id="@+id/spnEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-        <!--        Spinnner para eliminar la  pagina-->
-        <EditText
-            android:id="@+id/edtEliminar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Modifica el texto a tu pagina"
-            />
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/lightBlue"
-            android:padding="10dp"
-            android:text="@string/eliminar_pagina"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEliminar" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
