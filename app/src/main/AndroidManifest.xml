@@ -5,7 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.NOTIFICATION" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
@@ -26,15 +26,8 @@
             android:name=".ContenedorCRUD"
             android:exported="false" />
         <activity
-            android:name=".CRUD_Pagina"
-            android:exported="false" />
-        <activity
             android:name=".DrawerLayoult"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".Principio" -->
-        <!-- android:exported="false" -->
-        <!-- android:label="@string/title_activity_principio" -->
-        <!-- android:theme="@style/Theme.WikiCroissants.NoActionBar" /> -->
+            android:exported="false" />
         <activity
             android:name=".Pagina"
             android:exported="false" />
