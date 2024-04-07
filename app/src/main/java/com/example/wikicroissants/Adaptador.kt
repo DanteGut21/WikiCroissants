@@ -75,7 +75,7 @@ class AdaptadorLibros(private val dataLibros: List<Libros>, private val onClick:
         // Configura el elemento izquierdo
         dataLibros.getOrNull(leftItemIndex)?.let { libro ->
             holder.leftTextView.text = libro.name
-
+            holder.rightDescTextView.text = libro.description // Actualiza la descripción para el lado derecho
             // Suponiendo que 'libro' tiene una imagen, ajusta esto para usar la imagen de 'libro'
             holder.leftImageView.setImageResource(R.drawable.libro)
             holder.leftLinearLayout.setOnClickListener {
@@ -116,7 +116,7 @@ class AdaptadorLibros(private val dataLibros: List<Libros>, private val onClick:
         val rightTextView: TextView = view.findViewById(R.id.tvTituloLibroDer)
         val rightDescTextView: TextView = view.findViewById(R.id.tvDesclibroDer)
     }
-}
+}// Class AdaptadorLibros
 
 class AdaptadorCapitulos(private val dataCapitulos: List<com.example.wikicroissants.models.Capitulos>, private val onClick: (Capitulos) -> Unit) :
     RecyclerView.Adapter<AdaptadorCapitulos.ElementoViewHolderCapitulos>() {
@@ -143,4 +143,4 @@ class AdaptadorCapitulos(private val dataCapitulos: List<com.example.wikicroissa
         val textView: TextView = itemView.findViewById(R.id.tvCapitulo)
         val descTextView: TextView = itemView.findViewById(R.id.tvDescCapitulo)
     }
-}
+}//Class AdaptadorCapitulos

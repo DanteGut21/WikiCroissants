@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,16 +25,30 @@ class Libros : Fragment() {
         savedState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_libros, container, false)
-    }
+    }//onCreateView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvLibros)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        fetchBooks()
-    }
 
-    private fun fetchBooks() {
+        // Recupera el idEstante y el nombre (título) del estante de los argumentos, si es necesario
+        val idEstante = arguments?.getString("idEstante", "Libros no disponibles") ?: "Libros no disponibles"
+        val tituloEstante = arguments?.getString("nombreEstante", "Título no disponible") ?: "Título no disponible"
+
+        // Encuentra el TextView por su ID y establece el título
+        val tvTituloEstante: TextView = view.findViewById(R.id.tvTituloEstante)
+        tvTituloEstante.text = tituloEstante
+
+        if (idEstante != "Libros no disponibles") {
+            fetchBooks(idEstante)
+        } else {
+            // Manejar el caso en que idEstante no esté disponible
+            Toast.makeText(context, "ID de estante no encontrado", Toast.LENGTH_SHORT).show()
+        }
+    }//onViewCreated
+
+    private fun fetchBooks(idEstante: String) {
         Thread {
             try {
                 val client = OkHttpClient.Builder()
@@ -43,7 +58,7 @@ class Libros : Fragment() {
                     .build()
 
                 val request = Request.Builder()
-                    .url("https://wiki.croissantsalfredo.com/api/books")
+                    .url("https://wiki.croissantsalfredo.com/api/shelves/$idEstante")
                     // Asegúrate de reemplazar esto con el token de autenticación real si es necesario
                     .addHeader("Authorization", "Token bRT0syWV9NNoNdRJmDXJE4dlAUjfNaJs:FyVfwiHGohEfNUNIgw8QFp3T0LoIepb2")
                     .build()
@@ -57,7 +72,7 @@ class Libros : Fragment() {
                     val respuestaLibro: RespuestaLibro = gson.fromJson(responseBody, responseType)
 
                     requireActivity().runOnUiThread {
-                        recyclerView.adapter = AdaptadorLibros(respuestaLibro.data) { libro ->
+                        recyclerView.adapter = AdaptadorLibros(respuestaLibro.books) { libro ->
                             // Reemplaza Toast con la navegación al fragmento de capitulos
                             val fragmentoCapitulos = Capitulos()
                             // Aquí se inicia la transacción del fragmento
@@ -76,5 +91,5 @@ class Libros : Fragment() {
                 }
             }
         }.start()
-    }
-}
+    }//fetchBooks
+}//Class Libros

@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wikicroissants.models.RespuestaAPI
+import com.example.wikicroissants.models.RespuestaEstante
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.OkHttpClient
@@ -51,28 +51,38 @@ class Estanteria : Fragment() {
 
                     val responseBody = response.body?.string() ?: throw IOException("No response body")
                     val gson = Gson()
-                    val responseType = object : TypeToken<RespuestaAPI>() {}.type
-                    val respuesta: RespuestaAPI = gson.fromJson(responseBody, responseType)
+                    val responseType = object : TypeToken<RespuestaEstante>() {}.type
+                    val respuesta: RespuestaEstante = gson.fromJson(responseBody, responseType)
 
-                    requireActivity().runOnUiThread {
+                    activity?.runOnUiThread {
                         recyclerView.adapter = AdaptadorEstantes(respuesta.data) { estante ->
-                            // Reemplaza Toast con la navegación al fragmento de libros
+                            Toast.makeText(context, "Ingresando a ${estante.name}", Toast.LENGTH_SHORT).show()
+                            val idEstante = "${estante.id}";
+                            val nombreEstante = "${estante.name}";
                             val fragmentoLibros = Libros()
+
+                            // Crea un Bundle para pasar el idEstante
+                            val args = Bundle()
+                            args.putString("idEstante", idEstante) // Usa "idEstante" como clave para recuperar el valor en el fragmento Libros
+                            args.putString("nombreEstante", nombreEstante) // Usa "nombreEstante" como clave para recuperar el valor en el fragmento Libros
+                            fragmentoLibros.arguments = args // Establece los argumentos en el fragmento
+
                             // Aquí se inicia la transacción del fragmento
                             requireActivity().supportFragmentManager.beginTransaction().apply {
                                 replace(R.id.fragmentContainer, fragmentoLibros) // Asegúrate de que 'fragmentContainer' es el ID del contenedor de tu fragmento en tu layout
                                 addToBackStack(null) // Permite volver al fragmento anterior en la pila
                                 commit()
                             }
+
                         }
                     }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                requireActivity().runOnUiThread {
+                activity?.runOnUiThread {
                     Toast.makeText(context, "Error fetching data: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
         }.start()
-    }
-}
+    }//fetchShelves
+}//Class Estanteria

@@ -1,17 +1,15 @@
 package com.example.wikicroissants.models
 
-data class RespuestaAPI(
+data class RespuestaEstante(
     val data: List<Estante>,
     val total: Int
 )
 
 data class RespuestaLibro(
-    val data: List<Libros>,
-    val total: Int
+    val books: List<Libros>
 )
 
 data class RespuestaCapitulo(
     val data: List<Capitulos>,
     val total: Int
 )
-

@@ -1,4 +1,5 @@
 package com.example.wikicroissants
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -21,25 +22,56 @@ import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-//    private lateinit var notificacion: Notificacion
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        createNotificationChannel()
         binding.loginButton.setOnClickListener(View.OnClickListener {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
             Toast.makeText(this, "Bienvienido Usuario!", Toast.LENGTH_SHORT).show()
-//            val intent = Intent(this, Principal::class.java)
-            val intent = Intent(this, Pagina::class.java)
+            showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
+            val intent = Intent(this, Principal::class.java)
+//            val intent = Intent(this, Pagina::class.java)
             startActivity(intent)
             finish()
             } else {
             Toast.makeText(this, "Error en la confirmacion de los datos!", Toast.LENGTH_SHORT).show()
             }
         })//setOnClickListener
-        binding.btnScanQR.setOnClickListener{ escanearCodigo()}
+        binding.btnScanQR.setOnClickListener{ showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
+            escanearCodigo()
+        }
     }//onCreate
+
+    @SuppressLint("MissingPermission")
+    private fun showNotification(title: String, message: String) {
+        val builder = NotificationCompat.Builder(this, "notificacion")
+            .setSmallIcon(R.drawable.croissant) // Asegúrate de tener un recurso drawable válido aquí
+            .setContentTitle(title)
+            .setContentText(message)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        with(NotificationManagerCompat.from(this)) {
+            // notificationId es un identificador único para cada notificación
+            notify(0, builder.build())
+        }
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "Mi Canal"
+            val descriptionText = "Descripción del Canal"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel("notificacion", name, importance).apply {
+                description = descriptionText
+            }
+            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
     private fun escanearCodigo() {
         val intentIntegrator = IntentIntegrator(this).apply {
             setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
