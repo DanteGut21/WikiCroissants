@@ -1,4 +1,5 @@
 package com.example.wikicroissants
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,14 +56,18 @@ class Capitulos : Fragment() {
 
                     requireActivity().runOnUiThread {
                         recyclerView.adapter = AdaptadorCapitulos(respuestaCapitulo.data) { Capitulo ->
-                            // Reemplaza Toast con la navegación al fragmento de capitulos
-                            val fragmentoPaginas = Paginas()
-                            // Aquí se inicia la transacción del fragmento
-                            requireActivity().supportFragmentManager.beginTransaction().apply {
-                                replace(R.id.fragmentContainer, fragmentoPaginas) // Asegúrate de que 'fragmentContainer' es el ID del contenedor de tu fragmento en tu layout
-                                addToBackStack(null) // Permite volver al fragmento anterior en la pila
-                                commit()
-                            }
+//                            // Reemplaza Toast con la navegación al fragmento de capitulos
+//                            val fragmentoPaginas = Paginas()
+//                            // Aquí se inicia la transacción del fragmento
+//                            requireActivity().supportFragmentManager.beginTransaction().apply {
+//                                replace(R.id.fragmentContainer, fragmentoPaginas) // Asegúrate de que 'fragmentContainer' es el ID del contenedor de tu fragmento en tu layout
+//                                addToBackStack(null) // Permite volver al fragmento anterior en la pila
+//                                commit()
+//                            }
+                            val intent = Intent(context, Pagina::class.java).apply {
+                                // Opcional: Pasa información adicional a PaginaActivity
+                                                            }
+                            startActivity(intent)
                         }
                     }
                 }

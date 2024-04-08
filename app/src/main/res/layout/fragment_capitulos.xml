@@ -10,52 +10,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Titulo libro"
-        android:textSize="48dp"
-        android:padding="4dp"
+        android:textSize="40dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/llDescripcionCapitulo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloLibro">
+
         <TextView
-            android:id="@+id/tvUltMod"
+            android:id="@+id/tvDesContenido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ultima modificación"
-            android:textSize="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/llDescripcionCapitulo"
+            android:text="Descrición del contenido del libro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/tvAutor"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloLibro" />
+
+        <Button
+            android:id="@+id/btnLectura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Autor"
-            android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUltMod"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/lightBlue"
+            android:padding="15dp"
+            android:text="@string/lectura"
+            app:layout_constraintEnd_toStartOf="@+id/tvDesContenido"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tvDesContenido"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloLibro" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/tvDesContenido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Descrición del contenido del libro"
-        app:layout_constraintTop_toBottomOf="@+id/llDescripcionCapitulo">
-    </TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCapitulo"
         android:layout_width="0dp"
@@ -64,5 +58,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDesContenido" />
+        app:layout_constraintTop_toBottomOf="@+id/llDescripcionCapitulo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

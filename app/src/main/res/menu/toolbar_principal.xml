@@ -15,5 +15,9 @@
         android:id="@+id/itemSalir"
         android:title="@string/salida"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/itempagina"
+        android:title="@string/salida"
+        app:showAsAction="never" />
 
 </menu>

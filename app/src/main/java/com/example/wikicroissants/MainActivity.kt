@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             // notificationId es un identificador único para cada notificación
             notify(0, builder.build())
         }
-    }
+    }//showNotification
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
-    }
+    }//createNotificationChannel
 
     private fun escanearCodigo() {
         val intentIntegrator = IntentIntegrator(this).apply {

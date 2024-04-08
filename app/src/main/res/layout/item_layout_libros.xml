@@ -29,14 +29,14 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="Titulo"
-            android:textSize="26sp"
+            android:textSize="18sp"
             app:layout_constraintTop_toTopOf="@id/imgLibroIzq" />
         <TextView
             android:id="@+id/tvDesLibroIzq"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:text="Descripción"
             app:layout_constraintTop_toTopOf="@id/tvTituloLibroIzq" />
     </LinearLayout>
@@ -67,7 +67,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="Titulo"
-            android:textSize="26sp"
+            android:textSize="18sp"
             app:layout_constraintTop_toTopOf="@id/imgLibroDer" />
 
         <TextView
@@ -76,7 +76,7 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="Descripción"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toTopOf="@id/tvTituloLibroDer" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

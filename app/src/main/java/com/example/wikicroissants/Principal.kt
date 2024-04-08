@@ -22,8 +22,8 @@ class Principal : AppCompatActivity(){
         //Toolbar
         supportFragmentManager.commit{
             setReorderingAllowed(true)
-            add<Inicio>(R.id.fragmentContainer)
-//            add<Estanteria>(R.id.fragmentContainer)
+//            add<Inicio>(R.id.fragmentContainer)
+            add<Estanteria>(R.id.fragmentContainer)
         }
     }//OnCreate
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -55,6 +55,13 @@ class Principal : AppCompatActivity(){
             R.id.itemSalir -> {
                 Toast.makeText(this,"Sesión cerrada correctamente", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                true
+            }
+            R.id.itempagina -> {
+                Toast.makeText(this,"Paginas", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Pagina::class.java)
                 startActivity(intent)
                 finish()
                 true

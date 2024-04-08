@@ -23,6 +23,7 @@
     <string name="modificar_pagina">Modificar Pagina</string>
     <string name="eliminar_pagina">Eliminar pagina</string>
     <string name="agregar_pagina">Agregar pagina</string>
+    <string name="lectura">Iniciar lectura</string>
 
     <string name="si">Aceptar</string>
     <string name="no">Cancelar</string>
