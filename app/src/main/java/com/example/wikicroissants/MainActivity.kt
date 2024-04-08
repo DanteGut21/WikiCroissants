@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingPermission")
     private fun showNotification(title: String, message: String) {
         val builder = NotificationCompat.Builder(this, "notificacion")
-            .setSmallIcon(R.drawable.croissants) // Asegúrate de tener un recurso drawable válido aquí
+            .setSmallIcon(R.mipmap.ic_croissant_round) // Asegúrate de tener un recurso drawable válido aquí
             .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
