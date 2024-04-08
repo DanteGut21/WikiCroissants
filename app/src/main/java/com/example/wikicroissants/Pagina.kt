@@ -48,8 +48,28 @@ class Pagina : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.itemDelete -> {
-                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this,"Eliminar Pagina", Toast.LENGTH_SHORT).show()
+//                true
+
+                AlertDialog.Builder(this)
+                    .setTitle("Confirmación")
+                    .setMessage("¿Estás seguro de querer eliminar este texto?")
+                    .setPositiveButton("Eliminar") { dialog, which ->
+                        // Aquí iría el código para eliminar el texto del EditText, por ejemplo:
+                        val editText = findViewById<EditText>(R.id.edtPagina)
+                        editText.setText("")
+
+                        // Cambiar a Capitulos Fragment en Principal Activity
+                        val intent = Intent(this, Principal::class.java)
+                        intent.putExtra("fragmentToLoad", "Capitulos") // Indicador para cargar fragmento Capitulos
+                        startActivity(intent)
+                        finish() // Opcional, si deseas terminar Pagina Activity
+                    }
+                    .setNegativeButton("Cancelar", null)
+                    .show()
                 true
+
+
             }
             R.id.itemSave -> {
                 val fragment = supportFragmentManager.findFragmentById(R.id.fcPagina) as Paginas?

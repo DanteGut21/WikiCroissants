@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:background="@color/lightBlue"
+                android:backgroundTint="@color/lightBlue"
                 android:text="INICIO"
                 android:textSize="18sp"
                 app:cornerRadius="12dp"
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Scan QR/Barcode"
-                android:background="@color/white"
+                android:backgroundTint="@color/white"
                 android:textColor="@color/lightBlue"/>
         </LinearLayout>
 

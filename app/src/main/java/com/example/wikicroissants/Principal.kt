@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 class Principal : AppCompatActivity(){
@@ -22,9 +23,29 @@ class Principal : AppCompatActivity(){
         //Toolbar
         supportFragmentManager.commit{
             setReorderingAllowed(true)
-//            add<Inicio>(R.id.fragmentContainer)
             add<Estanteria>(R.id.fragmentContainer)
         }
+
+        val intentFragmentToLoad = intent.getStringExtra("fragmentToLoad")
+        if (intentFragmentToLoad != null) {
+            // Limpiar la pila de retroceso para evitar sobreposiciones de fragmentos
+            supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+
+            val fragment = when (intentFragmentToLoad) {
+                "Capitulos" -> Capitulos()
+                "Estanteria" -> Estanteria()
+                else -> null
+            }
+
+            fragment?.let {
+                supportFragmentManager.commit {
+                    replace(R.id.fragmentContainer, it)
+                    addToBackStack(null) // Considera si necesitas esto basado en tu flujo de usuario
+                }
+            }
+        }
+
+
     }//OnCreate
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_principal, menu)
@@ -42,16 +63,16 @@ class Principal : AppCompatActivity(){
                 transaction.commit()
                 true
             }
-            R.id.itemLibros -> {
-                Toast.makeText(this,"Libros", Toast.LENGTH_SHORT).show()
-                val fragemntoLibros = Libros()
-                val fragmentManager = supportFragmentManager
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.fragmentContainer, fragemntoLibros)
-                transaction.addToBackStack(null)
-                transaction.commit()
-                true
-            }
+//            R.id.itemLibros -> {
+//                Toast.makeText(this,"Libros", Toast.LENGTH_SHORT).show()
+//                val fragemntoLibros = Libros()
+//                val fragmentManager = supportFragmentManager
+//                val transaction = fragmentManager.beginTransaction()
+//                transaction.replace(R.id.fragmentContainer, fragemntoLibros)
+//                transaction.addToBackStack(null)
+//                transaction.commit()
+//                true
+//            }
             R.id.itemSalir -> {
                 Toast.makeText(this,"Sesión cerrada correctamente", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)

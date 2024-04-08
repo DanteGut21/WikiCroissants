@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
             Toast.makeText(this, "Bienvienido Usuario!", Toast.LENGTH_SHORT).show()
             showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
-//            val intent = Intent(this, Principal::class.java)
-            val intent = Intent(this, Pagina::class.java)
+            val intent = Intent(this, Principal::class.java)
+//            val intent = Intent(this, Pagina::class.java)
             startActivity(intent)
             finish()
             } else {
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingPermission")
     private fun showNotification(title: String, message: String) {
         val builder = NotificationCompat.Builder(this, "notificacion")
-            .setSmallIcon(R.drawable.croissant) // Asegúrate de tener un recurso drawable válido aquí
+            .setSmallIcon(R.drawable.croissants) // Asegúrate de tener un recurso drawable válido aquí
             .setContentTitle(title)
             .setContentText(message)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

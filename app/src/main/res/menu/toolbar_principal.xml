@@ -4,13 +4,13 @@
     <item
         android:id="@+id/itemEstante"
         android:title="@string/library"
-        android:icon="@drawable/local_library_24"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/itemLibros"
-        android:title="@string/books"
         android:icon="@drawable/library_books_24"
         app:showAsAction="ifRoom" />
+<!--    <item-->
+<!--        android:id="@+id/itemLibros"-->
+<!--        android:title="@string/books"-->
+<!--        android:icon="@drawable/library_books_24"-->
+<!--        app:showAsAction="ifRoom" />-->
     <item
         android:id="@+id/itemSalir"
         android:title="@string/salida"
