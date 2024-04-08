@@ -1,5 +1,9 @@
 package com.example.wikicroissants
 import android.os.Bundle
+import android.text.Editable
+import android.text.Html
+import android.text.Html.FROM_HTML_MODE_COMPACT
+import android.text.Spanned
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +25,20 @@ class Paginas : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val edtPagina: EditText = view.findViewById(R.id.edtPagina)
+        val htmlString = "<h2>Título</h2><br><p>Este es un <b>texto</b> de ejemplo con <i>HTML</i>.</p>"
+
+        val spanned: Spanned
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            spanned = Html.fromHtml(htmlString, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            @Suppress("DEPRECATION")
+            spanned = Html.fromHtml(htmlString)
+        }
+
+// Convertir Spanned a Editable
+        val editable: Editable = Editable.Factory.getInstance().newEditable(spanned)
+        edtPagina.text = editable
+
         edtPagina.isFocusable = false
         edtPagina.isFocusableInTouchMode = false
         edtPagina.isClickable = false

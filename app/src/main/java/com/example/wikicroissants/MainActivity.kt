@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
             Toast.makeText(this, "Bienvienido Usuario!", Toast.LENGTH_SHORT).show()
             showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
-            val intent = Intent(this, Principal::class.java)
-//            val intent = Intent(this, Pagina::class.java)
+//            val intent = Intent(this, Principal::class.java)
+            val intent = Intent(this, Pagina::class.java)
             startActivity(intent)
             finish()
             } else {

@@ -12,6 +12,7 @@
         android:layout_height="0dp"
         android:text="Texto corespondiente a la pagina"
         android:gravity="left"
+        android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
