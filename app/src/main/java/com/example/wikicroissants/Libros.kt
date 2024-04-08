@@ -22,31 +22,29 @@ class Libros : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedState: Bundle?
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_libros, container, false)
-    }//onCreateView
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.rvLibros)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Recupera el idEstante y el nombre (título) del estante de los argumentos, si es necesario
         val idEstante = arguments?.getString("idEstante", "Libros no disponibles") ?: "Libros no disponibles"
         val tituloEstante = arguments?.getString("nombreEstante", "Título no disponible") ?: "Título no disponible"
 
-        // Encuentra el TextView por su ID y establece el título
         val tvTituloEstante: TextView = view.findViewById(R.id.tvTituloEstante)
         tvTituloEstante.text = tituloEstante
 
         if (idEstante != "Libros no disponibles") {
             fetchBooks(idEstante)
         } else {
-            // Manejar el caso en que idEstante no esté disponible
             Toast.makeText(context, "ID de estante no encontrado", Toast.LENGTH_SHORT).show()
         }
-    }//onViewCreated
+
+    }
 
     private fun fetchBooks(idEstante: String) {
         Thread {
@@ -59,7 +57,6 @@ class Libros : Fragment() {
 
                 val request = Request.Builder()
                     .url("https://wiki.croissantsalfredo.com/api/shelves/$idEstante")
-                    // Asegúrate de reemplazar esto con el token de autenticación real si es necesario
                     .addHeader("Authorization", "Token bRT0syWV9NNoNdRJmDXJE4dlAUjfNaJs:FyVfwiHGohEfNUNIgw8QFp3T0LoIepb2")
                     .build()
 
@@ -73,12 +70,22 @@ class Libros : Fragment() {
 
                     requireActivity().runOnUiThread {
                         recyclerView.adapter = AdaptadorLibros(respuestaLibro.books) { libro ->
-                            // Reemplaza Toast con la navegación al fragmento de capitulos
+                            Toast.makeText(context, "Ingresando a ${libro.name}", Toast.LENGTH_SHORT).show()
+                            val idLibro = "${libro.id}";
+                            val nombreLibro = "${libro.name}";
+                            // Aquí se maneja el click en un libro, pasando el idLibro a Capitulos
                             val fragmentoCapitulos = Capitulos()
-                            // Aquí se inicia la transacción del fragmento
+                            val args = Bundle()
+                            args.putString("idLibro", idLibro) // Usa "idLibro" como clave para recuperar el valor en el fragmento Libros
+                            args.putString("nombreLibro", nombreLibro) // Usa "nombreLibro" como clave para recuperar el valor en el fragmento Libros
+                            fragmentoCapitulos.arguments = args // Establece los argumentos en el fragmento
+
+
+
+                            // Inicia la transacción del fragmento
                             requireActivity().supportFragmentManager.beginTransaction().apply {
-                                replace(R.id.fragmentContainer, fragmentoCapitulos) // Asegúrate de que 'fragmentContainer' es el ID del contenedor de tu fragmento en tu layout
-                                addToBackStack(null) // Permite volver al fragmento anterior en la pila
+                                replace(R.id.fragmentContainer, fragmentoCapitulos)
+                                addToBackStack(null)
                                 commit()
                             }
                         }
@@ -91,5 +98,5 @@ class Libros : Fragment() {
                 }
             }
         }.start()
-    }//fetchBooks
-}//Class Libros
+    }
+}

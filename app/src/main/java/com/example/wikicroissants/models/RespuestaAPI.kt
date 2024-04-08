@@ -10,6 +10,10 @@ data class RespuestaLibro(
 )
 
 data class RespuestaCapitulo(
-    val data: List<Capitulos>,
-    val total: Int
+    val contents: List<Capitulos>,
+
+    )
+
+data class RespuestaPagina(
+    val data: List<Pagina>
 )

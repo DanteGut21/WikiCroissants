@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener(View.OnClickListener {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
             Toast.makeText(this, "Bienvenido Usuario!", Toast.LENGTH_SHORT).show()
-            showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
             val intent = Intent(this, Principal::class.java)
 //            val intent = Intent(this, Pagina::class.java)
             startActivity(intent)
             finish()
-            } else {
+            showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
+        } else {
             Toast.makeText(this, "Error en la confirmacion de los datos!", Toast.LENGTH_SHORT).show()
             }
         })//setOnClickListener
@@ -88,9 +88,10 @@ class MainActivity : AppCompatActivity() {
         val intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         intentResult?.contents?.let { contents ->
             Toast.makeText(this, "Código leído: $contents", Toast.LENGTH_SHORT).show()
-            if (contents == "070847036715") {
+            if (contents == "Rie1kaer2") {
                 val newIntent = Intent(this, Principal::class.java)
                 startActivity(newIntent)
+                finish()
             }
         } ?: run {
             Toast.makeText(this, "Lectura cancelada", Toast.LENGTH_SHORT).show()
