@@ -10,12 +10,15 @@
         android:id="@+id/llCRUDAgregar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custom_edittext"
         android:orientation="vertical"
         android:padding="10dp"
-        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnAgregar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tvAgregar"
             android:layout_width="match_parent"
@@ -30,22 +33,27 @@
         <EditText
             android:id="@+id/edtAgregar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="Agrega texto a tu nueva pagina"
-            />
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:minLines="5"
+            android:maxLines="10"
+            android:inputType="textMultiLine"
+            android:text="Agrega texto a tu nueva pagina" />
 
-        <Button
-            android:id="@+id/btnAgregar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/lightBlue"
-            android:padding="10dp"
-            android:text="@string/agregar_pagina"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtAgregar" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/lightBlue"
+        android:padding="10dp"
+        android:text="@string/agregar_pagina"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

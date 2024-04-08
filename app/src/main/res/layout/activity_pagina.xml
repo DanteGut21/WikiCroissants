@@ -41,6 +41,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ablPagina" />
+
     <Button
         android:id="@+id/btnAnterior"
         android:layout_width="0dp"

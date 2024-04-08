@@ -27,7 +27,6 @@ class ContenedorCRUD : AppCompatActivity() {
                 putString("ACTION", action)
             }
         }
-
         // Cargar el Fragment CRUD en el contenedor
         supportFragmentManager.beginTransaction()
             .replace(R.id.frgmntCRUD, crudFragment)

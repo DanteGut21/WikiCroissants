@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         createNotificationChannel()
         binding.loginButton.setOnClickListener(View.OnClickListener {
         if (binding.username.text.toString() == "user" && binding.password.text.toString() == "User123") {
-            Toast.makeText(this, "Bienvienido Usuario!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Bienvenido Usuario!", Toast.LENGTH_SHORT).show()
             showNotification("Acceso concedido.", "Token autorizado exitosamente.") // Considera cuándo debe mostrarse realmente la notificación
             val intent = Intent(this, Principal::class.java)
 //            val intent = Intent(this, Pagina::class.java)
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             val channel = NotificationChannel("notificacion", name, importance).apply {
                 description = descriptionText
             }
-            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager: NotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
     }//createNotificationChannel
